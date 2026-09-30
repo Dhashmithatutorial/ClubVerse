@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ClubVerse – University Club Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav-in">
+      <a href="#/" class="logo">✦ CLUBVERSE</a>
+      <nav class="links" id="links">
+        <a href="#/" data-r="">Home</a>
+        <a href="#/clubs" data-r="clubs">Explore Clubs</a>
+        <a href="#/events" data-r="events">Events</a>
+        <a href="#/gallery" data-r="gallery">Gallery</a>
+        <a href="#/about" data-r="about">About</a>
+      </nav>
+      <div class="nav-r">
+        <a class="icon" href="#/clubs" aria-label="Search">🔍</a>
+        <a class="icon" href="#/my-space" aria-label="My Clubs">♡<b class="dot" id="badge" hidden>0</b></a>
+        <button class="icon" id="theme" aria-label="Toggle theme">🌙</button>
+        <a href="#/clubs" class="btn sm hide-m">Explore Clubs</a>
+        <button class="icon burger" id="burger" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+  <main id="app" class="page"></main>
+  <footer class="footer"><b>✦ CLUBVERSE</b> Discover. Connect. Create.<br /><small>A frontend concept project. Not an official university website.</small></footer>
+  <div id="modal-root"></div>
+  <script src="script.js"></script>
+</body>
+</html>
