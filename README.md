@@ -2,6 +2,17 @@
 
 ClubVerse is a frontend web application designed to help university students discover clubs, explore events, connect with communities, and participate in campus activities.
 
+
+## 👥 Team
+
+- [Bhargavi](https://github.com/Bhargavi171)
+- [Dhashmitha](https://github.com/Dhashmithatutorial)
+- [Nazima Syed](https://github.com/iamnazimasyed)
+- [Bhuvana](https://github.com/vu241fa04341-ops)
+
+## 🚀 Deployment
+
+The project is deployed using **Vercel**.
 ## 🌐 Live Demo
 
 👉 [Visit ClubVerse](https://clubverse-sand.vercel.app/)
