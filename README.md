@@ -207,7 +207,7 @@ ClubVerse was developed as a collaborative group project by a team of four membe
 - **Kundeti Naga Dhashmitha** – [GitHub](https://github.com/Dhashmithatutorial) | 
 
 - **V.Bhuvana Teja** – 
-[GitHub](https://github.com/Dhashmithatutorial) | 
+[GitHub](https://github.com/vu241fa04341-ops) | 
 
 - **A. Bhargavi sai** – 
 [GitHub](https://github.com/Bhargavi171) | 
