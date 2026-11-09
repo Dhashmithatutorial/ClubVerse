@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API = "http://localhost:5000/api";
+const API = "https://clubverse-backend-4hla.onrender.com";
 
 const COLORS = {
   "Performing Arts": "#a06cf0",
@@ -145,52 +145,27 @@ const save = (key, value) => {
   localStorage.setItem(key, JSON.stringify(value));
 };
 
-/* ================================
-   MAIN APP COMPONENT
-================================ */
 
 function App() {
-  /* ---------- Main Data States ---------- */
 
   const [clubs, setClubs] = useState(CLUBS_FALLBACK);
   const [events, setEvents] = useState(EVENTS_FALLBACK);
-
-  /* ---------- User Data States ---------- */
-
   const [favs, setFavs] = useState(() => read("cv-favs", []));
   const [joined, setJoined] = useState(() => read("cv-joined", []));
   const [regs, setRegs] = useState(() => read("cv-regs", []));
   const [activity, setActivity] = useState(() => read("cv-act", []));
-
-  /* ---------- Theme State ---------- */
-
   const [theme, setTheme] = useState(() => read("cv-theme", "light"));
-
-  /* ---------- Navigation & UI States ---------- */
-
   const [route, setRoute] = useState(location.hash.slice(1) || "/");
   const [modal, setModal] = useState(null);
   const [mobile, setMobile] = useState(false);
-
-  /* ---------- Filter States ---------- */
-
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   const [eventType, setEventType] = useState("All");
   const [galleryCat, setGalleryCat] = useState("All");
-
-  /* ================================
-     THEME EFFECT
-  ================================ */
-
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     save("cv-theme", theme);
   }, [theme]);
-
-  /* ================================
-     LOCAL STORAGE EFFECTS
-  ================================ */
 
   useEffect(() => {
     save("cv-favs", favs);
@@ -208,9 +183,6 @@ function App() {
     save("cv-act", activity);
   }, [activity]);
 
-  /* ================================
-     ROUTING EFFECT
-  ================================ */
 
   useEffect(() => {
     const handleRoute = () => {
@@ -221,10 +193,6 @@ function App() {
 
     return () => window.removeEventListener("hashchange", handleRoute);
   }, []);
-
-  /* ================================
-     FETCH CLUBS & EVENTS
-  ================================ */
 
   useEffect(() => {
     fetch(`${API}/clubs`)
@@ -252,10 +220,6 @@ function App() {
       .catch(() => {});
   }, []);
 
-  /* ================================
-     ROUTE & DATA HELPERS
-  ================================ */
-
   const path = route.split("/").filter(Boolean);
   const page = path[0] || "home";
   const clubId = path[1];
@@ -268,10 +232,6 @@ function App() {
 
   const log = (text) => setActivity((a) => [text, ...a].slice(0, 6));
 
-  /* ================================
-     FAVORITE CLUB HANDLER
-  ================================ */
-
   const toggleFav = (id) => {
     setFavs((prev) =>
       prev.includes(id)
@@ -279,21 +239,12 @@ function App() {
         : [...prev, id]
     );
   };
-
-  /* ================================
-     NAVIGATION HANDLER
-  ================================ */
-
   const go = (hash) => {
     location.hash = hash;
     setMobile(false);
   };
 
   const favoriteCount = favs.length;
-
-  /* ================================
-     REUSABLE COMPONENTS
-  ================================ */
 
   const FilterBar = ({ items, value, onChange }) => (
     <div className="filters">
@@ -308,8 +259,6 @@ function App() {
       ))}
     </div>
   );
-
-  /* ---------- Club Card ---------- */
 
   const ClubCard = ({ c }) => (
     <article
@@ -344,8 +293,6 @@ function App() {
     </article>
   );
 
-  /* ---------- Event Card ---------- */
-
   const EventCard = ({ e }) => {
     const c = clubById(e.club) || clubs[0];
     const id = e.id || e._id;
@@ -377,18 +324,12 @@ function App() {
     );
   };
 
-  /* ---------- Statistics Box ---------- */
-
   const statBox = ([n, l]) => (
     <div key={l}>
       <b>{n}</b>
       <span>{l}</span>
     </div>
   );
-
-  /* ================================
-     FORM FIELDS
-  ================================ */
 
   const formFields =
     modal?.kind === "join"
@@ -405,10 +346,6 @@ function App() {
           ["email", "Email", "email"],
           ["dept", "Department", "text"],
         ];
-
-  /* ================================
-     FORM SUBMISSION HANDLER
-  ================================ */
 
   const submitForm = async (e) => {
     e.preventDefault();
@@ -458,10 +395,6 @@ function App() {
       alert("Unable to connect to the server. Please try again.");
     }
   };
-
-  /* ================================
-     HOME PAGE
-  ================================ */
 
   const home = (
     <>
@@ -543,13 +476,7 @@ function App() {
     </>
   );
 
-  /* ================================
-     PAGE CONTENT & ROUTING
-  ================================ */
-
   let content = home;
-
-  /* ---------- Explore Clubs Page ---------- */
 
   if (page === "clubs") {
     const list = clubs.filter(
@@ -592,7 +519,6 @@ function App() {
     );
   }
 
-  /* ---------- Club Details Page ---------- */
 
   if (page === "clubs" && clubId) {
     const c = clubById(clubId);
@@ -675,7 +601,7 @@ function App() {
     );
   }
 
-  /* ---------- Events Page ---------- */
+
 
   if (page === "events") {
     content = (
@@ -700,7 +626,7 @@ function App() {
     );
   }
 
-  /* ---------- Gallery Page ---------- */
+  
 
   if (page === "gallery") {
     content = (
@@ -742,7 +668,7 @@ function App() {
     );
   }
 
-  /* ---------- My Space Page ---------- */
+
 
   if (page === "my-space") {
     const picks = (ids) =>
@@ -839,8 +765,7 @@ function App() {
     );
   }
 
-  /* ---------- About Page ---------- */
-
+  
   if (page === "about") {
     content = (
       <section className="sec">
@@ -862,11 +787,6 @@ function App() {
       </section>
     );
   }
-
-  /* ================================
-     MAIN RETURN & NAVIGATION
-  ================================ */
-
   return (
     <>
       <header className="nav" id="nav">

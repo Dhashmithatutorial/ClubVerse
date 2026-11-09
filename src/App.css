@@ -1,4 +1,4 @@
-/* ---------- 1. Variables & base ---------- */
+
 :root {
   --navy: #14183a;
   --bg: #fbf6ea;
@@ -159,7 +159,6 @@ button {
 .center { text-align: center; margin-top: 2rem; }
 
 
-/* ---------- 4. Hero ---------- */
 .hero {
   position: relative;
   overflow: hidden;
@@ -215,8 +214,6 @@ button {
   50% { transform: translateY(-14px); }
 }
 
-
-/* ---------- 5. Stats ---------- */
 .stats {
   max-width: 1000px;
   margin: 1rem auto;
@@ -234,7 +231,6 @@ button {
 .stats.mini { grid-template-columns: repeat(3, 1fr); margin: 1rem 0; }
 
 
-/* ---------- 6. Sections & cards ---------- */
 .sec { max-width: 1200px; margin: auto; padding: 3rem 1.2rem; }
 .sub { margin-bottom: 1.5rem; color: var(--muted); }
 
@@ -343,7 +339,6 @@ button {
 }
 
 
-/* ---------- 8. Club detail page ---------- */
 .banner {
   padding: 4rem 1.2rem;
   display: flex;
@@ -364,7 +359,6 @@ button {
 .chips li { padding: .5rem 1rem; background: var(--card); border-radius: 99px; box-shadow: var(--shadow); }
 
 
-/* ---------- 9. Modal ---------- */
 .overlay {
   position: fixed;
   inset: 0;
@@ -478,9 +472,6 @@ button {
   background: linear-gradient(transparent, rgba(9, 11, 26, .7));
 }
 
-/* Photo links – one class per image.
-   To use a different picture, change the file name (or paste a web link):
-   .ph-dance-1 { --photo: url('images/my-dance-photo.jpg'); }               */
 .ph-dance-1        { --photo: url('images/dance-1.jpg'); }
 .ph-dance-2        { --photo: url('images/dance-2.jpg'); }
 .ph-dance-3        { --photo: url('images/dance-3.jpg'); }
@@ -535,8 +526,6 @@ button {
 .tile.lightbox span { font-size: clamp(4rem, 14vw, 7rem); line-height: 1; }
 .tile.lightbox small { font-size: 1.15rem; }
 
-
-/* ---------- 11. Footer & responsive ---------- */
 .footer {
   margin-top: 3rem;
   padding: 2.5rem 1rem;
