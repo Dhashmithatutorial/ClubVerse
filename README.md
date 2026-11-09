@@ -178,14 +178,19 @@ Node.js + Express Backend
         v
      MongoDB
 ```
+## 🚀 Live Demo
+
+- **Frontend (Vercel):** [ClubVerse Live Website]
+(https://club-verse-tan.vercel.app)
+
+- **Backend (Render):** [ClubVerse API](https://clubverse-backend-4hla.onrender.com)
+
+- **GitHub Repository:** [ClubVerse](https://github.com/Dhashmithatutorial/ClubVerse)
 
 ## 🚀 Deployment
-
-Deployment information will be updated after the application is deployed.
-
-- **Frontend:** Coming Soon
-- **Backend API:** Coming Soon
-- **Database:** MongoDB Atlas
+- Frontend deployed on Vercel
+- Backend deployed on Render
+- Database hosted on MongoDB Atlass
 
 ## 📌 Future Enhancements
 
